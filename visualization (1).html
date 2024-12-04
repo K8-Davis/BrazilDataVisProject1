@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+</head>
+<body>
+  <div id="vis"/>
+  <script>
+    const spec = {
+  "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}},
+  "vconcat": [
+    {
+      "layer": [
+        {
+          "data": {"name": "data-825c12a729cf803fce6d5435058b11d2"},
+          "mark": {"type": "line", "point": true},
+          "encoding": {
+            "tooltip": [
+              {"field": "Year", "type": "quantitative"},
+              {"field": "Value", "type": "quantitative"}
+            ],
+            "x": {"field": "Year", "title": "Year", "type": "ordinal"},
+            "y": {
+              "field": "Value",
+              "scale": {"domain": [14, 28]},
+              "title": "GDP (% of Total)",
+              "type": "quantitative"
+            }
+          },
+          "height": 400,
+          "selection": {
+            "Year": {
+              "type": "single",
+              "fields": ["Year"],
+              "bind": {"input": "range", "max": 2019, "min": 1988, "step": 1},
+              "init": {"Year": 1988}
+            }
+          },
+          "title": "Gross Capital Formation (% of GDP) In Brazil",
+          "width": 800
+        },
+        {
+          "data": {"name": "data-3a1d28a18755573a5cdbe6b2d921d6ba"},
+          "mark": {"type": "rule", "color": "red", "strokeDash": [5, 5]},
+          "encoding": {
+            "tooltip": {"field": "Label", "type": "nominal"},
+            "x": {"field": "Year", "type": "ordinal"}
+          }
+        },
+        {
+          "data": {"name": "data-495866b0087c6e45c68c89133849c6da"},
+          "mark": {"type": "rule", "color": "orange", "strokeDash": [5, 5]},
+          "encoding": {
+            "tooltip": {"field": "Label", "type": "nominal"},
+            "x": {"field": "Year", "type": "ordinal"}
+          }
+        },
+        {
+          "data": {"name": "data-825c12a729cf803fce6d5435058b11d2"},
+          "mark": {"type": "rule", "color": "blue"},
+          "encoding": {"x": {"field": "Year", "type": "ordinal"}},
+          "transform": [{"filter": {"selection": "Year"}}]
+        },
+        {
+          "data": {"name": "data-825c12a729cf803fce6d5435058b11d2"},
+          "mark": {"type": "rule", "color": "blue"},
+          "encoding": {"x": {"field": "Year", "type": "ordinal"}},
+          "transform": [{"filter": {"selection": "Year"}}]
+        }
+      ]
+    },
+    {
+      "layer": [
+        {
+          "data": {"name": "data-f68e9fdc262b85ca284aaffb658792c9"},
+          "mark": {"type": "line", "point": true},
+          "encoding": {
+            "tooltip": [
+              {"field": "Year", "type": "quantitative"},
+              {"field": "Forest_Size", "type": "quantitative"}
+            ],
+            "x": {"field": "Year", "title": "Year", "type": "ordinal"},
+            "y": {
+              "field": "Forest_Size",
+              "title": "Deforestation Area km^2",
+              "type": "quantitative"
+            }
+          },
+          "height": 400,
+          "selection": {
+            "Year": {
+              "type": "single",
+              "fields": ["Year"],
+              "bind": {"input": "range", "max": 2019, "min": 1988, "step": 1},
+              "init": {"Year": 1988}
+            }
+          },
+          "title": "Deforestation Area in Brazil",
+          "width": 800
+        },
+        {
+          "data": {"name": "data-3a1d28a18755573a5cdbe6b2d921d6ba"},
+          "mark": {"type": "rule", "color": "red", "strokeDash": [5, 5]},
+          "encoding": {
+            "tooltip": {"field": "Label", "type": "nominal"},
+            "x": {"field": "Year", "type": "ordinal"}
+          }
+        },
+        {
+          "data": {"name": "data-495866b0087c6e45c68c89133849c6da"},
+          "mark": {"type": "rule", "color": "orange", "strokeDash": [5, 5]},
+          "encoding": {
+            "tooltip": {"field": "Label", "type": "nominal"},
+            "x": {"field": "Year", "type": "ordinal"}
+          }
+        },
+        {
+          "data": {"name": "data-f68e9fdc262b85ca284aaffb658792c9"},
+          "mark": {"type": "rule", "color": "blue"},
+          "encoding": {"x": {"field": "Year", "type": "ordinal"}},
+          "transform": [{"filter": {"selection": "Year"}}]
+        },
+        {
+          "data": {"name": "data-f68e9fdc262b85ca284aaffb658792c9"},
+          "mark": {"type": "rule", "color": "blue"},
+          "encoding": {"x": {"field": "Year", "type": "ordinal"}},
+          "transform": [{"filter": {"selection": "Year"}}]
+        }
+      ]
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
+  "datasets": {
+    "data-825c12a729cf803fce6d5435058b11d2": [
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 1988,
+        "Value": 22.7185283455265
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 1989,
+        "Value": 26.9027870631375
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 1990,
+        "Value": 20.166606912234
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 1991,
+        "Value": 19.7691006203762
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 1992,
+        "Value": 18.9346023488561
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 1993,
+        "Value": 20.8463587533397
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 1994,
+        "Value": 22.9934893680231
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 1995,
+        "Value": 17.2923463458623
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 1996,
+        "Value": 17.2669463759545
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 1997,
+        "Value": 17.7639856110956
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 1998,
+        "Value": 18.1647519194741
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 1999,
+        "Value": 17.3895597435179
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2000,
+        "Value": 18.9031192683871
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2001,
+        "Value": 18.7418602950836
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2002,
+        "Value": 17.4490794834956
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2003,
+        "Value": 16.8566884007152
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2004,
+        "Value": 17.9125683422575
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2005,
+        "Value": 17.2048834771385
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2006,
+        "Value": 17.8164738964017
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2007,
+        "Value": 19.8193259705999
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2008,
+        "Value": 21.6193828366983
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2009,
+        "Value": 18.7961350502449
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2010,
+        "Value": 21.8013215651568
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2011,
+        "Value": 21.8262760943346
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2012,
+        "Value": 21.4172253653349
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2013,
+        "Value": 21.6937669402108
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2014,
+        "Value": 20.5484107588347
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2015,
+        "Value": 17.4116425416713
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2016,
+        "Value": 14.9695469753696
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2017,
+        "Value": 14.630386283879
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2018,
+        "Value": 14.8293714110751
+      },
+      {
+        "SeriesName": "Gross capital formation (% of GDP)",
+        "SeriesCode": "NE.GDI.TOTL.ZS",
+        "CountryName": "Brazil",
+        "CountryCode": "BRA",
+        "Year": 2019,
+        "Value": 15.1129684771643
+      }
+    ],
+    "data-3a1d28a18755573a5cdbe6b2d921d6ba": [
+      {"Year": 2014, "Label": "2014 Brazilian economic crisis"}
+    ],
+    "data-495866b0087c6e45c68c89133849c6da": [
+      {"Year": 2010, "Label": "2010 - Beginning of Brazilian recession"}
+    ],
+    "data-f68e9fdc262b85ca284aaffb658792c9": [
+      {"Year": 1988, "State": "Sum Brazil", "Forest_Size": 21050},
+      {"Year": 1989, "State": "Sum Brazil", "Forest_Size": 17770},
+      {"Year": 1990, "State": "Sum Brazil", "Forest_Size": 13730},
+      {"Year": 1991, "State": "Sum Brazil", "Forest_Size": 11030},
+      {"Year": 1992, "State": "Sum Brazil", "Forest_Size": 13786},
+      {"Year": 1993, "State": "Sum Brazil", "Forest_Size": 14896},
+      {"Year": 1994, "State": "Sum Brazil", "Forest_Size": 14896},
+      {"Year": 1995, "State": "Sum Brazil", "Forest_Size": 29059},
+      {"Year": 1996, "State": "Sum Brazil", "Forest_Size": 18161},
+      {"Year": 1997, "State": "Sum Brazil", "Forest_Size": 13227},
+      {"Year": 1998, "State": "Sum Brazil", "Forest_Size": 17383},
+      {"Year": 1999, "State": "Sum Brazil", "Forest_Size": 17259},
+      {"Year": 2000, "State": "Sum Brazil", "Forest_Size": 18226},
+      {"Year": 2001, "State": "Sum Brazil", "Forest_Size": 18165},
+      {"Year": 2002, "State": "Sum Brazil", "Forest_Size": 21650},
+      {"Year": 2003, "State": "Sum Brazil", "Forest_Size": 25396},
+      {"Year": 2004, "State": "Sum Brazil", "Forest_Size": 27772},
+      {"Year": 2005, "State": "Sum Brazil", "Forest_Size": 19014},
+      {"Year": 2006, "State": "Sum Brazil", "Forest_Size": 14286},
+      {"Year": 2007, "State": "Sum Brazil", "Forest_Size": 11651},
+      {"Year": 2008, "State": "Sum Brazil", "Forest_Size": 12911},
+      {"Year": 2009, "State": "Sum Brazil", "Forest_Size": 7464},
+      {"Year": 2010, "State": "Sum Brazil", "Forest_Size": 7000},
+      {"Year": 2011, "State": "Sum Brazil", "Forest_Size": 6418},
+      {"Year": 2012, "State": "Sum Brazil", "Forest_Size": 4571},
+      {"Year": 2013, "State": "Sum Brazil", "Forest_Size": 5891},
+      {"Year": 2014, "State": "Sum Brazil", "Forest_Size": 5012},
+      {"Year": 2015, "State": "Sum Brazil", "Forest_Size": 6207},
+      {"Year": 2016, "State": "Sum Brazil", "Forest_Size": 7893},
+      {"Year": 2017, "State": "Sum Brazil", "Forest_Size": 6947},
+      {"Year": 2018, "State": "Sum Brazil", "Forest_Size": 7536},
+      {"Year": 2019, "State": "Sum Brazil", "Forest_Size": 10129}
+    ]
+  }
+};
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+</body>
+</html>
